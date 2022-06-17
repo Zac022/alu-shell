@@ -6,7 +6,7 @@ do
 	if [ $((COUNTER%15)) = 0 ]
 	then
 		echo "FizzBuzz"
-	elif [ $((COUNTER%3)) =0 ]
+	elif [ $((COUNTER%3)) = 0 ]
 	then
 		echo "Fizz"
 	elif [ $((COUNTER%5)) = 0 ]
