@@ -1,16 +1,19 @@
 #!/usr/bin/env bash
 #scripts to add words at different multiple while counting to 100
-NUMBER=1
-while((NUMBER<=100));do
-if [  "$((NUMBER%3))" -eq 0  ] &&  [  "$((NUMBER%5))" -eq  0  ] ;then
-echo "Fizzbuzz"
-elif [ "$((NUMBER%3))" -eq 0 ] ;then
-echo "Fizz"
-elif [ "$((NUMBER%5))" -eq 0 ] ;then
-echo "Buzz"
-else
-
-echo "$NUMBER"
-fi
-((NUMBER++))
-done;
+COUNTER=1
+while [ $COUNTER -lt 101 ]
+do
+	if [ $((COUNTER%15)) = 0 ]
+	then
+		echo "FizzBuzz"
+	elif [ $((COUNTER%3)) =0 ]
+	then
+		echo "Fizz"
+	elif [ $((COUNTER%5)) = 0 ]
+	then
+		echo "Buzz"
+	else
+		echo "$COUNTER"
+	fi
+	(( COUNTER+=1))
+done
