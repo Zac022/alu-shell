@@ -1,36 +1,17 @@
 #!/usr/bin/env bash
 #displays numbers from 1 to 20.
 
-COUNTER=1
-while [ $COUNTER -lt 21 ]
-do 
-  case $COUNTER in 
+NUMBER=1
+while((NUMBER<=20));do
+	echo "$NUMBER"
+	case $NUMBER in
+		4) echo "bad luck from china"
+			;;
+		9) echo "bad luck from Japan"
+			;;
+		17) echo "bad luck from Italy"
+			;;
 
-     4) 
-
-       echo $COUNTER 
-       echo "bad luck from China"
-      ;;
-
-     9) 
-
-      echo $COUNTER 
-      echo "bad luck from Japan"
-      ;;
-
-      17)
-    
-        echo $COUNTER
-        echo "bad luck from Italy
-        ;;
-
-      *)
-       
-        echo $COUNTER
-        ;;
-
-      esac
-
-
-   (( COUNTER+=1))
-done
+	esac
+	((NUMBER++))
+done;
