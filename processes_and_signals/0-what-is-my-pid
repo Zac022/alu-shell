@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #script to print PID of script run
 
-ECHO $$
+ECHOO $$
