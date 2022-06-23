@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+#script that create file and stores it PID, displays message depending on the signal it recieves
+pgrep -f "$0" > /var/run/myscript.pid
+function catchSIGTERM(){
+          echo "I hate the kill command"
+          TEMPTWO="$(cat /var/run/myscript.pid)"
+         rm /var/run/myscript.pid
+         kill -9 "$TEMPTWO"
+}
+
+function catchSIGINT(){
+        echo "Y U no love me?!"
+}
+
+function catchSIGQUIT(){
+TEMP="$(cat /var/run/myscript.pid)"
+rm /var/run/myscript.pid
+kill -9 "$TEMP"
+}
+
+while true
+do
+
+      echo "To infinity and beyond"
+      trap catchSIGTERM SIGTERM
+      trap catchSIGINT SIGINT
+      trap catchSIGQUIT SIGQUIT
+done
