@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#script print some text in a loop
+function catchkill(){
+         echo "I am invincible!!!"
+}
+
+
+while true 
+do
+          echo "To infinity and beyond"
+          sleep 2
+          trap catchkill SIGTERM
+done
